@@ -33,21 +33,12 @@ array.push(marcela);
 
 //muestra los datos de los miembros del squad en un div en el html 
 var squad = array.forEach(function(elementos){
-		document.getElementById("lista").innerHTML += "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] + "</li><li>" + elementos.hobbies[2] + "</li></ul>";
-	})
+    document.getElementById("lista").innerHTML += "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] + "</li><li>" + elementos.hobbies[2] + "</li></ul>";
+});
+
 }
+
 listaSquad();
 
-function Comentario(id-miembro, comentario, likes){
-	
-
-}
 
 
-
-
-
-
-
-	
-	
