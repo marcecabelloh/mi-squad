@@ -38,6 +38,16 @@ var squad = array.forEach(function(elementos){
 }
 listaSquad();
 
+function Comentario(id-miembro, comentario, likes){
+	
+
+}
+
+
+
+
+
+
 
 	
 	
