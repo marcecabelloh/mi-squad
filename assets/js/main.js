@@ -5,8 +5,17 @@ function MiembroSquad(nombre, apellido, edad, hobbies){
 	this.nombre = nombre;
 	this.apellido = apellido;
 	this.edad = edad;
-	this.hobbies = hobbies
+	this.hobbies = hobbies;
+	this.photos = new Image();
+	this.photos.src="fotos/" + this.nombre + ".jpg";// intenté sin éxito subir fotos de perfil
 
+}
+
+//se debía crear una clase llamada comentario
+function Comentario(id_miembro, comentario, likes){
+	this.id_miembro = id_miembro;
+	this.comentario = comentario;
+	this.likes = likes;
 }
 
 // función que permite crear div en html y luego crear otro elemento en este caso un textarea, 
@@ -22,7 +31,8 @@ function llenarDiv(idDiv, caja){
 	}); 
 }
 
-function ContadorLike(idLike, Like){
+//función que me permite crear otro div vacío y así introducir un botón para los likes
+function contadorLike(idLike, Like){
 	var  puntos = document.getElementById(idLike);
 	var opAux;
 	like.forEach(function(elemento){
@@ -31,6 +41,7 @@ function ContadorLike(idLike, Like){
 		puntos.appendChild(opAux);
 	}); 
 }
+
 
 function listaSquad(){
 
@@ -57,14 +68,16 @@ array.push(marcela);
 
 
 
-//muestra los datos de los miembros del squad en un div en el html y el cuadro de comentarios y el botón
+//muestra los datos de los miembros del squad en un div en el html y el cuadro de comentarios su botón y el botón de likes con forma de corazón.
 var squad = array.forEach(function(elementos){
-    document.getElementById("lista").innerHTML += "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] 
-    + "</li><li>" + elementos.hobbies[2] + "</li></ul>" + "<textarea name='comment' id='comment'></textarea>" + "<br>" + "<input type='submit' value='Dejar comentario'/>"
-    + "<input name= 'boton1' type='image'src= 'botoncorazon.jpg' width='50' height='40'>" + "<br><br>";
+	document.getElementById("lista").innerHTML += elementos.photos="fotos/" + "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] 
+	+ "</li><li>" + elementos.hobbies[2] + "</li></ul>" + "<textarea name='comment' id='comment' placeholder='escriba aquí'></textarea>" + "<br>" + "<input type='submit' value='Dejar comentario'/>"
+	+ "<input name= 'boton1' type='image'src= 'botoncorazon.jpg' width='50' height='40'>" + "<br><br>";
 
 });
 
 }
 
 listaSquad();
+
+//falta imprimir comentarios de usuarios y el conteo de likes.
