@@ -1,3 +1,5 @@
+ array = [];//arreglo vacío para guardar cada uno de los miembros de mi squad
+
 //ffunción constructora 
 function MiembroSquad(nombre, apellido, edad, hobbies){
 	this.nombre = nombre;
@@ -7,9 +9,20 @@ function MiembroSquad(nombre, apellido, edad, hobbies){
 
 }
 
-function listaSquad(){
+// función que permite crear div en html y luego crear otro elemento en este caso un textarea, 
+//el cual llamo al final concatenando todos los datos que quiero imprimir
 
-var array = [];//arreglo vacío para guardar cada uno de los miembros de mi squad
+function llenarDiv(idDiv, caja){
+	var div = document.getElementById(idDiv);
+	var opAux;
+	caja.forEach(function(elemento){
+		opAux = document.createElement("textarea");
+		opAux.innerHTML =  elemento.nombre;
+		div.appendChild(opAux);
+	}); 
+}
+
+function listaSquad(){
 
 //instancia para cada integrante del squad
 var melissa = new MiembroSquad("Melissa", "Pacheco", 25, ["dormir", "comer", "Matilda <3"]);
@@ -31,14 +44,16 @@ array.push(paula);
 array.push(mariela);
 array.push(marcela);
 
-//muestra los datos de los miembros del squad en un div en el html 
+
+
+
+//muestra los datos de los miembros del squad en un div en el html y el cuadro de comentarios y el botón
 var squad = array.forEach(function(elementos){
-    document.getElementById("lista").innerHTML += "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] + "</li><li>" + elementos.hobbies[2] + "</li></ul>";
+    document.getElementById("lista").innerHTML += "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] 
+    + "</li><li>" + elementos.hobbies[2] + "</li></ul>" + "<textarea name='comment' id='comment'></textarea>" + "<br>" + "<input type='submit' value='Dejar comentario'/>"  + "<br><br>";
+
 });
 
 }
 
 listaSquad();
-
-
-
