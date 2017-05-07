@@ -1,4 +1,4 @@
- array = [];//arreglo vacío para guardar cada uno de los miembros de mi squad
+ var array = [];//arreglo vacío para guardar cada uno de los miembros de mi squad
 
 //ffunción constructora 
 function MiembroSquad(nombre, apellido, edad, hobbies){
@@ -19,6 +19,16 @@ function llenarDiv(idDiv, caja){
 		opAux = document.createElement("textarea");
 		opAux.innerHTML =  elemento.nombre;
 		div.appendChild(opAux);
+	}); 
+}
+
+function ContadorLike(idLike, Like){
+	var  puntos = document.getElementById(idLike);
+	var opAux;
+	like.forEach(function(elemento){
+		opAux = document.createElement("button");
+		opAux.innerHTML =  elemento.nombre;
+		puntos.appendChild(opAux);
 	}); 
 }
 
@@ -50,7 +60,8 @@ array.push(marcela);
 //muestra los datos de los miembros del squad en un div en el html y el cuadro de comentarios y el botón
 var squad = array.forEach(function(elementos){
     document.getElementById("lista").innerHTML += "<b>Nombre: </b>" + elementos.nombre + " " + elementos.apellido + "<br><b>Edad: </b>" + elementos.edad + "<br><b>Hobbies:</b>" + "<ul><li>" + elementos.hobbies[0] + "</li><li>" + elementos.hobbies[1] 
-    + "</li><li>" + elementos.hobbies[2] + "</li></ul>" + "<textarea name='comment' id='comment'></textarea>" + "<br>" + "<input type='submit' value='Dejar comentario'/>"  + "<br><br>";
+    + "</li><li>" + elementos.hobbies[2] + "</li></ul>" + "<textarea name='comment' id='comment'></textarea>" + "<br>" + "<input type='submit' value='Dejar comentario'/>"
+    + "<input name= 'boton1' type='image'src= 'botoncorazon.jpg' width='50' height='40'>" + "<br><br>";
 
 });
 
